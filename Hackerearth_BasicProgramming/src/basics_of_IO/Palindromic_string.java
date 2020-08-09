@@ -19,24 +19,24 @@ public class Palindromic_string {
 		Scanner scan=new Scanner(System.in);
 		String s=scan.nextLine();
 		s.toLowerCase();
-        char[] rev=checkpalindrome(s.toCharArray(),0,s.length()-1);
-        //System.out.println(String.valueOf(rev));
-        if(s.equals(String.valueOf(rev)))
+       String rev=checkpalindrome(s.toCharArray(),0,s.length()-1);
+
+        if(s.equals(rev))
         		System.out.println("YES");
         else
         	System.out.println("NO");
 	}
 
-	static char[] checkpalindrome(char[] arr,int start,int end) {
+	static String checkpalindrome(char[] arr,int start,int end) {
 		if(start>=end) {
 			//System.out.println(arr);
-			return arr;}
+			return String.valueOf(arr);}
 		else {
 			char temp=arr[start];
 			arr[start]=arr[end];
 			arr[end]=temp;
 			checkpalindrome(arr, start+1, end-1);
 		}
-		return arr;
+		return String.valueOf(arr);
 	}
 }
