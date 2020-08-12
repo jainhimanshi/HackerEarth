@@ -35,14 +35,21 @@ public class Friends_Relationship {
 			}
 	}
 	static void pattern(int N) {
-		for(int i=1;i<=N;i++) {
-			for(int j=0;j<i;j++) {
+		int i=1;
+		
+		for(int n=1;n<=N;n++) {
+			
+			for(int j=1;j<=i;j++) 
 			System.out.print("*");
-			for(int k=1;k<=N;k++)
+			
+			for(int k=1;k<=Math.abs(2*(N-i));k++)
 				System.out.print("#");
-			System.out.print("*");
-			}
+			
+			for(int m=1;m<=i;m++) 
+				System.out.print("*");
+		
 			System.out.println();
+			i++;
 		}
 	}
 }
